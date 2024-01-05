@@ -7,9 +7,7 @@
 html {
   font-family: 'Roboto Slab', sans-serif;
   line-height: 1.5;
-
   color: #ebe7ef;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -18,10 +16,10 @@ html {
 }
 
 body {
-  background: radial-gradient(circle at top, rgba(241, 210, 70, 0.98), rgba(250, 176, 103, 0.87)), url('bg-pattern-dark.png');
+  background: radial-gradient(circle at top, rgba(70, 130, 180, 0.98), rgba(173, 216, 230, 0.87)), url('bg-pattern-dark.jpeg');
   background-repeat: repeat;
   background-size: 100% 100%, 30% 30%, 100% 100%;
-  min-height: 110rem;
+  min-height: 100rem;
 }
 
 header {
@@ -39,7 +37,25 @@ h1 {
   font-family: 'Caprasimo', cursive;
   font-size: 3rem;
   margin: 0 auto 3rem auto;
-  color: #3f3b00;
+  color: #1f3b4d;
+  text-shadow: 0px 0px 10px #79d4f3;
+}
+
+#info-div {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#info-div:nth-child(1) {
+  justify-content: space-around;
+}
+
+.win-count {
+  font-size: 1rem;
+  color: #ebe7ef;
+  margin-top: 1rem;
+  text-align: center;
+  font-weight: bold;
 }
 
 #game-container {
@@ -47,7 +63,7 @@ h1 {
   margin: 3rem auto;
   padding: 2rem;
   border-radius: 6px;
-  background: linear-gradient(#383624, #282617);
+  background: linear-gradient(#2c3e50, #34495e);
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
   position: relative;
 }
@@ -70,20 +86,20 @@ h1 {
 }
 
 #players.highlight-player li.active {
-  border-color: #f6e35a;
+  border-color: #add8e6;
   animation: pulse 2s infinite ease-in-out;
 }
 
 #players.highlight-player li.active .player-name,
 #players.highlight-player li.active .player-symbol {
-  color: #f6e35a;
+  color: #add8e6;
 }
 
 #players button {
   width: 3rem;
   border: none;
   background: none;
-  color: #c3ba78;
+  color: #7b8d93;
   font-size: 0.9rem;
   cursor: pointer;
   transition: color 0.2s;
@@ -92,7 +108,7 @@ h1 {
 }
 
 #players button:hover {
-  color: #f8ca31;
+  color: #4682b4;
 }
 
 .player {
@@ -106,7 +122,7 @@ h1 {
   display: inline-block;
   width: 10rem;
   font-size: 1rem;
-  color: #e1dec7;
+  color: #c7e0e1;
   text-transform: uppercase;
   margin: 0;
   padding: 0.5rem;
@@ -122,7 +138,7 @@ h1 {
   border: none;
   padding: 0.5rem;
   animation: pulse-text 2s infinite;
-  background-color: #46432f;
+  background-color: #2f3446;
   text-align: center;
   text-transform: uppercase;
 }
@@ -146,7 +162,7 @@ ol {
 #pre-game button {
   cursor: pointer;
   background: none;
-  color: #f8c031;
+  color: #4682b4;
   border: none;
   font-family: 'Caprasimo', cursive;
   font-size: 4rem;
@@ -177,8 +193,8 @@ ol {
   width: 8rem;
   height: 8rem;
   border: none;
-  background: #aca788;
-  color: #3f3b00;
+  background: #b0c4de;
+  color: #1f3b4d;
   font-size: 5rem;
   cursor: pointer;
   font-family: 'Caprasimo', cursive;
@@ -195,7 +211,7 @@ ol {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgba(40, 38, 23, 0.95);
+  background-color: rgba(52, 73, 94, 0.95);
   animation: pop-in 0.5s cubic-bezier(0.68, -0.55, 0.65, 0.52) forwards;
 }
 
@@ -203,40 +219,42 @@ ol {
   font-family: 'Caprasimo', cursive;
   font-size: 4rem;
   text-align: center;
-  color: #fcd256;
+  color: #79d4f3;
   margin: 0;
 }
 
 #game-over p {
   font-size: 2rem;
   text-align: center;
-  color: #e1dec7;
+  color: #f5f5f5;
 }
 
-#game-over button {
+#game-over button,
+#game-mode {
   display: block;
   margin: 0 auto;
   font-size: 1.5rem;
   background: none;
-  border: 2px solid #fcd256;
-  color: #fcd256;
+  border: 2px solid #79d4f3;
+  color: #79d4f3;
   padding: 0.5rem 1rem;
   border-radius: 4px;
   cursor: pointer;
   transition: all 0.2s, color 0.2s;
-  box-shadow: 0 0 8px rgba(255, 187, 0, 0.4);
+  box-shadow: 0 0 8px rgba(108, 222, 242, 0.4);
 }
 
-#game-over button:hover {
-  background: #fcd256;
-  color: #3f3b00;
+#game-over button:hover,
+#game-mode:hover {
+  background: #79d4f3;
+  color: #1f3b4d;
   transform: scale(1.1);
-  box-shadow: 0 0 20px rgba(255, 187, 0, 0.8);
+  box-shadow: 0 0 20px rgba(70, 130, 180, 0.8);
 }
 
 #log {
   max-width: 20rem;
-  color: #3f3b00;
+  color: #1f3b4d;
   list-style: none;
   margin: 2rem auto;
   padding: 0;
@@ -250,7 +268,7 @@ ol {
 }
 
 #log li.highlighted {
-  background-color: #3f3b00;
+  background-color: #1f3b4d;
   color: white;
 }
 
@@ -293,13 +311,13 @@ ol {
 
 @keyframes pulse-text {
   0% {
-    color: #e1dec7;
+    color: #a1ddef;
   }
   50% {
-    color: #9f9d83;
+    color: #5be9ee;
   }
   100% {
-    color: #e1dec7;
+    color: #a1ddef;
   }
 }
 
@@ -317,20 +335,19 @@ ol {
 
 @keyframes pulse {
   0% {
-    border-color: #f6e35a;
-    box-shadow: 0 0 0 0 rgba(246, 227, 90, 0.4);
+    border-color: #5ad9f6;
+    box-shadow: 0 0 0 0 rgba(90, 246, 228, 0.4);
   }
   50% {
-    border-color: #f8c031;
+    border-color: #31daf8;
     box-shadow: 0 0 0 0.5rem rgba(248, 165, 49, 0);
   }
   100% {
-    border-color: #f6e35a;
+    border-color: #5ad9f6;
     box-shadow: 0 0 0 0 rgba(246, 227, 90, 0);
   }
 }
 
-/* Fancy animation for showing the "Game Over" element */
 @keyframes pop-in {
   0% {
     transform: scale(0);
